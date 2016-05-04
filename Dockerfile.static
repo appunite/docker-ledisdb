@@ -1,0 +1,8 @@
+FROM tianon/true
+MAINTAINER Benjamin Borbe <bborbe@rocketnews.de>
+ADD ledis-server /
+ADD ledisdb.conf /
+EXPOSE 6380
+EXPOSE 11181
+VOLUME ["/data"]
+CMD ["/ledis-server","--config","/ledisdb.conf"]
